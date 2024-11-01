@@ -1,7 +1,7 @@
 package com.enp.todopro.api.controller;
 
 /*
- * @(#)UserController.java 1.0 30/10/2024
+ * @(#)UserController.java 1.0 31/10/2024
  * 
  * El código implementado en este formulario esta protegido
  * bajo las leyes internacionales del Derecho de Autor, sin embargo
