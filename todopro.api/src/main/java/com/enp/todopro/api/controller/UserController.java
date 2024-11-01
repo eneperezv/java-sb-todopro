@@ -19,7 +19,7 @@ import com.enp.todopro.api.model.ResponseDetails;
 import com.enp.todopro.api.service.UserService;
 
 @RestController
-@RequestMapping("/api/v1/spendify/todopro")
+@RequestMapping("/api/v1/todopro/todopro")
 public class UserController {
 	
 	@Autowired
