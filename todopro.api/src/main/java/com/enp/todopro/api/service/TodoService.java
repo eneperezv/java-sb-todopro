@@ -1,14 +1,34 @@
 package com.enp.todopro.api.service;
 
+/*
+ * @(#)TodoService.java 1.0 12/11/2024
+ * 
+ * El código implementado en este formulario esta protegido
+ * bajo las leyes internacionales del Derecho de Autor, sin embargo
+ * se entrega bajo las condiciones de la General Public License (GNU GPLv3)
+ * descrita en https://www.gnu.org/licenses/gpl-3.0.html
+ */
+
+/**
+ * @author eliezer.navarro
+ * @version 1.0
+ * @since 1.0
+ */
+
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.enp.todopro.api.dto.TodoDto;
 import com.enp.todopro.api.model.Todo;
+import com.enp.todopro.api.repository.TodoRepository;
 
 @Service
 public class TodoService {
+	
+	@Autowired
+	private TodoRepository todoRepository;
 	
 	public Todo buildEntity(TodoDto todoDto) {
 		Todo todo = new Todo();
