@@ -1,7 +1,7 @@
 package com.enp.todopro.api.repository;
 
 /*
- * @(#)TodoRepository.java 1.0 12/11/2024
+ * @(#)CategoryRepository.java 1.0 12/11/2024
  * 
  * El código implementado en este formulario esta protegido
  * bajo las leyes internacionales del Derecho de Autor, sin embargo
@@ -17,8 +17,8 @@ package com.enp.todopro.api.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.enp.todopro.api.model.Todo;
+import com.enp.todopro.api.model.Category;
 
-public interface TodoRepository extends JpaRepository<Todo,Long> {
+public interface CategoryRepository extends JpaRepository<Category,Long> {
 
 }
