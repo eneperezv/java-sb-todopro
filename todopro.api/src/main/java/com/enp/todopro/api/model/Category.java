@@ -18,6 +18,7 @@ package com.enp.todopro.api.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,8 +36,7 @@ public class Category {
     @Column(nullable = false, unique = true)
     private String name;
 
-    // Relación con tareas
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Todo> todos = new ArrayList<>();
 
 	public Long getId() {

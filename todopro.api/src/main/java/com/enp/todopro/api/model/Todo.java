@@ -35,9 +35,10 @@ public class Todo {
 
     private Boolean completed = false;
 
+    // Relación con Category (asegúrate de que coincida con el "mappedBy" en Category)
     @ManyToOne
-    @JoinColumn(name = "todo_list_id")
-    private TodoList todoList;
+    @JoinColumn(name = "category_id") // Nombre de la columna en la base de datos
+    private Category category;
 
 	public Long getId() {
 		return id;
@@ -63,17 +64,17 @@ public class Todo {
 		this.completed = completed;
 	}
 
-	public TodoList getTodoList() {
-		return todoList;
+	public Category getCategory() {
+		return category;
 	}
 
-	public void setTodoList(TodoList todoList) {
-		this.todoList = todoList;
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
 	@Override
 	public String toString() {
-		return "Todo [id=" + id + ", description=" + description + ", completed=" + completed + ", todoList=" + todoList
+		return "Todo [id=" + id + ", description=" + description + ", completed=" + completed + ", category=" + category
 				+ "]";
 	}
 

@@ -35,7 +35,7 @@ public class TodoService {
 		todo.setId(todoDto.getId());
 		todo.setDescription(todoDto.getDescription());
 		todo.setCompleted(todoDto.getCompleted());
-		todo.setTodoList(todoDto.getTodoList());
+		//todo.setTodoList(todoDto.getTodoList());
 		
 		return todo;
 	}
@@ -45,7 +45,7 @@ public class TodoService {
 		todoDto.setId(optional.get().getId());
 		todoDto.setDescription(optional.get().getDescription());
 		todoDto.setCompleted(optional.get().getCompleted());
-		todoDto.setTodoList(optional.get().getTodoList());
+		//todoDto.setTodoList(optional.get().getTodoList());
 		
 		return todoDto;
 	}
@@ -55,7 +55,7 @@ public class TodoService {
 		todoDto.setId(todo.getId());
 		todoDto.setDescription(todo.getDescription());
 		todoDto.setCompleted(todo.getCompleted());
-		todoDto.setTodoList(todo.getTodoList());
+		//todoDto.setTodoList(todo.getTodoList());
 		
 		return todoDto;
 	}
