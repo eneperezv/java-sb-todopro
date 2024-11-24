@@ -28,6 +28,14 @@ public class TodoListDto {
     private User user;
     private List<Todo> todos = new ArrayList<>();
     
+	public TodoListDto(Long id2, String title2) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public TodoListDto() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Long getId() {
 		return id;
 	}
