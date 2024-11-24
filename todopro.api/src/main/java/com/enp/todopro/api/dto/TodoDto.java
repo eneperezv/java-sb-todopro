@@ -24,6 +24,14 @@ public class TodoDto {
     private Boolean completed = false;
     private TodoList todoList;
     
+	public TodoDto(Long id2, String description2, Boolean completed2) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public TodoDto() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Long getId() {
 		return id;
 	}

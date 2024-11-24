@@ -15,7 +15,10 @@ package com.enp.todopro.api.service;
  * @since 1.0
  */
 
+import java.util.List;
+
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -59,5 +62,21 @@ public class TodoService {
 		
 		return todoDto;
 	}
+
+    public TodoDto createTodo(TodoDto todoDto) {
+        Todo todo = new Todo();
+        todo.setDescription(todoDto.getDescription());
+        todo.setCompleted(todoDto.getCompleted());
+        // Map category and todoList if provided in TodoDto
+        Todo savedTodo = todoRepository.save(todo);
+        return new TodoDto(savedTodo.getId(), savedTodo.getDescription(), savedTodo.getCompleted());
+    }
+
+    public List<TodoDto> getAllTodos() {
+        List<Todo> todos = todoRepository.findAll();
+        return todos.stream()
+                .map(t -> new TodoDto(t.getId(), t.getDescription(), t.getCompleted()))
+                .collect(Collectors.toList());
+    }
 
 }
