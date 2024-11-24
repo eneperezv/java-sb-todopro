@@ -26,6 +26,14 @@ public class CategoryDto {
     private String name;
     private List<Todo> todos = new ArrayList<>();
     
+	public CategoryDto(Long id2, String name2) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public CategoryDto() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Long getId() {
 		return id;
 	}

@@ -34,7 +34,7 @@ import com.enp.todopro.api.model.ResponseDetails;
 import com.enp.todopro.api.service.UserService;
 
 @RestController
-@RequestMapping("/api/v1/todopro/todopro")
+@RequestMapping("/api/v1/todopro/users")
 public class UserController {
 	
 	@Autowired

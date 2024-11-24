@@ -15,15 +15,16 @@ package com.enp.todopro.api.service;
  * @since 1.0
  */
 
+import java.util.List;
+
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.enp.todopro.api.dto.CategoryDto;
-import com.enp.todopro.api.dto.TodoDto;
 import com.enp.todopro.api.model.Category;
-import com.enp.todopro.api.model.Todo;
 import com.enp.todopro.api.repository.CategoryRepository;
 
 @Service
@@ -58,5 +59,19 @@ public class CategoryService {
 		
 		return categoryDto;
 	}
+
+    public CategoryDto createCategory(CategoryDto categoryDto) {
+        Category category = new Category();
+        category.setName(categoryDto.getName());
+        Category savedCategory = categoryRepository.save(category);
+        return new CategoryDto(savedCategory.getId(), savedCategory.getName());
+    }
+
+    public List<CategoryDto> getAllCategories() {
+        List<Category> categories = categoryRepository.findAll();
+        return categories.stream()
+                .map(c -> new CategoryDto(c.getId(), c.getName()))
+                .collect(Collectors.toList());
+    }
 
 }
