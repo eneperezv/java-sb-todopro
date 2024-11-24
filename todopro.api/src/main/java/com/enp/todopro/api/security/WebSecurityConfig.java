@@ -58,11 +58,11 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(registry -> {
                     //registry.requestMatchers("/swagger-ui/**").permitAll();
                     //registry.requestMatchers("/v3/api-docs/**").permitAll();
-                    registry.requestMatchers(HttpMethod.POST, "/api/v1/spendify/auth").permitAll();
+                    registry.requestMatchers(HttpMethod.POST, "/api/v1/todopro/auth").permitAll();
                     //USER
-                    registry.requestMatchers(HttpMethod.GET,  "/api/v1/spendify/users/**").hasRole("USER");
-                    registry.requestMatchers(HttpMethod.POST, "/api/v1/spendify/users/register").hasRole("USER");
-                    registry.requestMatchers(HttpMethod.PUT,  "/api/v1/spendify/users/**").hasRole("USER");
+                    registry.requestMatchers(HttpMethod.GET,  "/api/v1/todopro/users/**").hasRole("USER");
+                    registry.requestMatchers(HttpMethod.POST, "/api/v1/todopro/users/register").hasRole("USER");
+                    registry.requestMatchers(HttpMethod.PUT,  "/api/v1/todopro/users/**").hasRole("USER");
                     /*
                     //CLIENT
                     registry.requestMatchers(HttpMethod.POST, "/api/v1/reservite/client").hasRole("USER");

@@ -34,6 +34,10 @@ public class Todo {
     private String description;
 
     private Boolean completed = false;
+    
+    @ManyToOne
+    @JoinColumn(name = "todo_list_id") // Esto crea la columna "todo_list_id" en la tabla Todo
+    private TodoList todoList;
 
     // Relación con Category (asegúrate de que coincida con el "mappedBy" en Category)
     @ManyToOne
@@ -64,6 +68,14 @@ public class Todo {
 		this.completed = completed;
 	}
 
+	public TodoList getTodoList() {
+		return todoList;
+	}
+
+	public void setTodoList(TodoList todoList) {
+		this.todoList = todoList;
+	}
+
 	public Category getCategory() {
 		return category;
 	}
@@ -74,8 +86,8 @@ public class Todo {
 
 	@Override
 	public String toString() {
-		return "Todo [id=" + id + ", description=" + description + ", completed=" + completed + ", category=" + category
-				+ "]";
+		return "Todo [id=" + id + ", description=" + description + ", completed=" + completed + ", todoList=" + todoList
+				+ ", category=" + category + "]";
 	}
 
 }
